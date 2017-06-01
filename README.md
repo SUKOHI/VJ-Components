@@ -12,3 +12,8 @@ Custom Vue components with jQuery
 # Usage
 
 Please see examples that each folder has.
+
+# License
+
+This package is licensed under the MIT License.  
+Copyright 2017 Sukohi Kuhoh
