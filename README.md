@@ -5,6 +5,10 @@ Custom Vue components with jQuery
 * bootstrap-datepicker
 * select2
 
+# Installation
+
+`bower install vj-components`
+
 # Usage
 
 Please see examples that each folder has.
