@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="el">
+    <div>
+        <p>Selected ID: {{ selected }}</p>
+        <bootstrap-buttons :options="options"
+                           name="os"
+                           type="default"
+                           size="md"
+                           v-model="selected"
+                           @input="onInputOption()"></bootstrap-buttons>
+        <br>
+    </div>
+    <button @click="changeSelectedOption()">Change Selected Option</button><br>
+    <button @click="changeOptions()">Change Options</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.min.js"></script>
+<script src="bootstrap-buttons.js"></script>
+<script>
+
+    new Vue({
+        el: '#el',
+        data: {
+            selected: 2,
+            options: [
+                { id: 1, text: 'Windows' },
+                { id: 2, text: 'Mac' },
+                { id: 3, text: 'Linux' }
+            ]
+        },
+        methods: {
+            changeSelectedOption: function() {
+
+                this.selected = 1;
+
+            },
+            changeOptions: function() {
+
+                this.options = [
+                    { id: 1, text: 'iOS' },
+                    { id: 2, text: 'Android' }
+                ];
+
+            },
+            onInputOption: function() {
+
+                // Do something..
+
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
