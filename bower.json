@@ -1,0 +1,21 @@
+{
+  "name": "vj-components",
+  "authors": [
+    "Sukohi Kuhoh"
+  ],
+  "description": "Custom Vue components with jQuery",
+  "main": "",
+  "keywords": [
+    "Vue",
+    "jQuery"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SUKOHI",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
