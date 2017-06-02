@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="el">
+    <div>
+        <p>Selected ID: {{ selected }}</p>
+        <bootstrap-label :options="options"
+                         name="os"
+                         v-model="selected"
+                         @change="onChangeOption()"
+                         data-toggle="modal"
+                         data-target="#myModal"></bootstrap-label>
+        <br>
+    </div>
+    <button @click="changeLabel(1)">Change label - 1</button><br>
+    <button @click="changeLabel(2)">Change label - 2</button><br>
+    <button @click="changeLabel(3)" v-if="this.options.length > 2">Change label - 3</button><hr>
+    <button @click="changeOptions()">Change Options</button>
+    <br>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Choose One!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">OS
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li v-for="option in options"><a href="#" data-dismiss="modal" @click.prevent="changeLabel(option.id)">{{ option.text }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.min.js"></script>
+<script src="bootstrap-label.js"></script>
+<script>
+
+    new Vue({
+        el: '#el',
+        data: {
+            selected: 2,
+            options: [
+                { id: 1, text: 'Windows', type: 'danger' },
+                { id: 2, text: 'Mac', type: 'warning' },
+                { id: 3, text: 'Linux', type: 'success' }
+            ]
+        },
+        methods: {
+            changeLabel: function(id) {
+
+                this.selected = id;
+
+            },
+            changeOptions: function() {
+
+                this.options = [
+                    { id: 1, text: 'iOS', type: 'info' },
+                    { id: 2, text: 'Android', type: 'primary' }
+                ];
+                this.selected = 1;
+
+            },
+            onChangeOption: function() {
+
+                // Do something..
+
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
