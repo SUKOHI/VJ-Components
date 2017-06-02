@@ -1,10 +1,10 @@
 # VJ-Components
 Custom Vue components with jQuery
 
-* bootstrap-buttons
-* bootstrap-datepicker
-* bootstrap-label
-* select2
+* bootstrap-buttons - [Demo](http://demo-laravel52.capilano-fw.com/VJ-Components/bootstrap-buttons/example.html)
+* bootstrap-datepicker - [Demo](http://demo-laravel52.capilano-fw.com/VJ-Components/bootstrap-datepicker/example.html)
+* bootstrap-label - [Demo](http://demo-laravel52.capilano-fw.com/VJ-Components/bootstrap-label/example.html)
+* select2 - [Demo](http://demo-laravel52.capilano-fw.com/VJ-Components/select2/example.html)
 
 # Installation
 
