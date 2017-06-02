@@ -3,6 +3,7 @@ Custom Vue components with jQuery
 
 * bootstrap-buttons
 * bootstrap-datepicker
+* bootstrap-label
 * select2
 
 # Installation
