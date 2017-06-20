@@ -14,7 +14,7 @@ Vue.component('bootstrap-buttons', {
     template: '<div><div class="btn-group">' +
         '<button v-for="(optionText, optionKey) in options" type="button" :class="btnClass" :data-id="optionKey" @click="onclick(optionKey)">{{ optionText }}</button>' +
         '</div>' +
-        '<input :name="this.name" type="text" :value="selectedValue"></div>',
+        '<input :name="this.name" type="hidden" :value="selectedValue"></div>',
     methods: {
         active: function() {
 
