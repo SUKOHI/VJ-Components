@@ -32,11 +32,11 @@
         el: '#el',
         data: {
             selected: 2,
-            options: [
-                { id: 1, text: 'Windows' },
-                { id: 2, text: 'Mac' },
-                { id: 3, text: 'Linux' }
-            ]
+            options: {
+                1: 'Windows',
+                2: 'Mac',
+                3: 'Linux'
+            }
         },
         methods: {
             changeSelectedOption: function() {
@@ -46,10 +46,10 @@
             },
             changeOptions: function() {
 
-                this.options = [
-                    { id: 1, text: 'iOS' },
-                    { id: 2, text: 'Android' }
-                ];
+                this.options = {
+                    1: 'iOS',
+                    2: 'Android'
+                };
 
             },
             onInputOption: function() {
