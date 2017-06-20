@@ -6,18 +6,22 @@ Vue.component('bootstrap-buttons', {
         'type',
         'size'
     ],
+    data: function () {
+        return {
+            selectedValue: this.value
+        }
+    },
     template: '<div><div class="btn-group">' +
-        '<button v-for="(optionText, optionKey) in options" type="button" :class="btnClass" :data-id="optionKey">{{ optionText }}</button>' +
+        '<button v-for="(optionText, optionKey) in options" type="button" :class="btnClass" :data-id="optionKey" @click="onclick(optionKey)">{{ optionText }}</button>' +
         '</div>' +
-        '<input :name="this.name" type="hidden" :value="this.value"></div>',
+        '<input :name="this.name" type="text" :value="selectedValue"></div>',
     methods: {
         active: function() {
 
-            var selectedId = this.value;
-
+            var vm = this;
             $(this.$el).find('button').each(function(i, el){
 
-                if(selectedId == $(el).data('id')) {
+                if(vm.selectedValue == $(el).data('id')) {
 
                     $(el).addClass('active');
 
@@ -28,6 +32,13 @@ Vue.component('bootstrap-buttons', {
                 }
 
             });
+
+        },
+        onclick: function(value) {
+
+            this.selectedValue = value;
+            this.$emit('input', value);
+            this.active();
 
         }
     },
@@ -54,19 +65,14 @@ Vue.component('bootstrap-buttons', {
     },
     mounted: function() {
 
-        var vm = this;
-        $(this.$el).find('button').on('click', function(e){
-
-            vm.$emit('input', $(e.target).data('id'));
-
-        });
         this.active();
 
     },
     watch: {
         value: function (value) {
 
-            $(this.$el).val(value).trigger('change');
+            this.selectedValue = value;
+            this.$emit('input', value);
             this.active();
 
         }
