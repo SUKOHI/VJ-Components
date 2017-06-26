@@ -7,7 +7,7 @@ Vue.component('bootstrap-datepicker', {
     mounted: function() {
 
         var vm = this;
-        $(this.$el).datepicker(this.options).on('changeDate', function(e){
+        $(this.$el).datepicker(this.options).on('changeDate change', function(e){
 
             vm.$emit('input', $(e.target).val());
 
