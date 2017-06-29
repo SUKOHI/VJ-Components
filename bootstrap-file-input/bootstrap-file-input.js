@@ -80,6 +80,13 @@ Vue.component('bootstrap-file-input', {
 
         }
     },
+    watch: {
+        value: function() {
+
+            $(':file').val('');
+
+        }
+    },
     mounted: function() {
 
         var component = this.$el;
