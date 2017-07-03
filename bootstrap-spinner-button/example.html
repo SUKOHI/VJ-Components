@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="el">
+    <div class="row">
+        <div class="col-sm-4">
+            <bootstrap-spinner-button id="button_1" class="btn btn-success"></bootstrap-spinner-button>
+            <bootstrap-spinner-button id="button_2" class="btn btn-success" data-loading-text="Loading now!">Send</bootstrap-spinner-button>
+            <button @click="resetLoading" class="btn default btn-md">
+                Reset
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.min.js"></script>
+<script src="bootstrap-spinner-button.js"></script>
+<script>
+
+    new Vue({
+        el: '#el',
+        methods: {
+            resetLoading: function() {
+
+                $('#button_1').button('reset');
+                $('#button_2').button('reset');
+
+                // or
+                // $('button').button('reset');
+
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
