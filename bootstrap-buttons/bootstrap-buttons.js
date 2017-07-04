@@ -75,6 +75,14 @@ Vue.component('bootstrap-buttons', {
 
         this.active();
 
+        var self = this;
+        $(this.$el).find('input').on('change', function(e) {
+
+            self.selectedValue = $(e.target).val();
+            self.active();
+
+        });
+
     },
     watch: {
         value: function (value) {
