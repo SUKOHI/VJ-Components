@@ -3,6 +3,7 @@ Vue.component('bootstrap-buttons', {
         'options',
         'name',
         'value',
+        'default-value',
         'type',
         'size'
     ],
@@ -64,6 +65,13 @@ Vue.component('bootstrap-buttons', {
         }
     },
     mounted: function() {
+
+        if(this.defaultValue != undefined) {
+
+            this.selectedValue = this.defaultValue;
+            this.$emit('input', this.defaultValue);
+
+        }
 
         this.active();
 
