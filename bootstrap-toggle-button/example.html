@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="el">
+    <div>
+        <p>Selected ID: {{ checked }}</p>
+        <bootstrap-toggle-button
+            name="remember_me"
+            type="default"
+            size="md"
+            v-model="checked"
+            @input="onInputOption()">Remember me!</bootstrap-toggle-button>
+        <br>
+        <button @click="changeChecked">Change checked</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.min.js"></script>
+<script src="bootstrap-toggle-button.js"></script>
+<script>
+
+    new Vue({
+        el: '#el',
+        data: {
+            checked: false
+        },
+        methods: {
+            changeChecked: function() {
+
+                this.checked = !this.checked;
+
+            },
+            onInputOption: function() {
+
+                // Do something..
+
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
