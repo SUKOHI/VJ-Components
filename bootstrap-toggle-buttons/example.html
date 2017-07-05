@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="el">
+    <div>
+        <p>Selected ID: {{ selectedValues }}</p>
+        <bootstrap-toggle-buttons :options="options"
+                           name="musics"
+                           type="default"
+                           size="md"
+                           value="[3,4]"
+                           v-model="selectedValues"
+                           @input="onInputOption()"></bootstrap-toggle-buttons>
+        <br>
+    </div>
+    <button @click="changeSelectedOption()">Change Selected Option</button><br>
+    <button @click="changeOptions()">Change Options</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.min.js"></script>
+<script src="bootstrap-toggle-buttons.js"></script>
+<script>
+
+    new Vue({
+        el: '#el',
+        data: {
+            selectedValues: ['1', '2'],
+            options: {
+                1: 'Rock',
+                2: 'Pop',
+                3: 'Classical',
+                4: 'Jazz',
+                5: 'Metal'
+            }
+        },
+        methods: {
+            changeSelectedOption: function() {
+
+                this.selectedValues = ['3', '5'];
+
+                // or if you do not use v-model
+                // $('[name=os]').val(1).trigger('change');
+
+            },
+            changeOptions: function() {
+
+                this.options = {
+                    1: 'Banana',
+                    2: 'Apple',
+                    3: 'Melon'
+                };
+
+            },
+            onInputOption: function() {
+
+                // Do something..
+
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
