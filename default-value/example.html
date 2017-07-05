@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="el">
+    <h1>Let's bind with default value!</h1>
+    <div>
+        <h3>Text Input</h3>
+        <p>Input Value: {{ inputValue }}</p>
+        <input id="input" type="text" v-model="inputValue" v-default-value="'Default value'">
+        <br>
+        <button @click="changeInputValue">Change Value</button>
+        <hr>
+        <h3>Select</h3>
+        <p>Select Value: {{ selectValue }}</p>
+        <select id="select" type="text" v-model="selectValue" v-default-value="'3'">
+            <option value="1" selected>Value - 1</option>
+            <option value="2">Value - 2</option>
+            <option value="3">Value - 3</option>
+        </select>
+        <br>
+        <button @click="changeSelectValue">Change Value</button>
+        <hr>
+        <h3>Radio</h3>
+        <p>Radio Value: {{ radioValue }}</p>
+        <label>
+            <input name="radio" type="radio" value="1" v-model="radioValue" v-default-value="3">Value -1
+        </label>
+        <label>
+            <input name="radio" type="radio" value="2" v-model="radioValue">Value -2
+        </label>
+        <label>
+            <input name="radio" type="radio" value="3" v-model="radioValue" checked>Value -3
+        </label>
+        <br>
+        <button @click="changeRadioValue">Change Value</button>
+        <hr>
+        <h3>Checkbox</h3>
+        <p>Checkbox Values: {{ checkboxValues }}</p>
+        <label>
+            <input name="checkbox" type="checkbox" value="1" v-model="checkboxValues" v-default-value="['1','2','3']">Value -1
+        </label>
+        <label>
+            <input name="checkbox" type="checkbox" value="2" v-model="checkboxValues">Value -2
+        </label>
+        <label>
+            <input name="checkbox" type="checkbox" value="3" v-model="checkboxValues">Value -3
+        </label>
+        <label>
+            <input name="checkbox" type="checkbox" value="4" v-model="checkboxValues">Value -4
+        </label>
+        <label>
+            <input name="checkbox" type="checkbox" value="5" v-model="checkboxValues">Value -5
+        </label>
+        <br>
+        <button @click="changeCheckboxValues">Change Values</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.min.js"></script>
+<script src="default-value.js"></script>
+<script>
+
+    new Vue({
+        el: '#el',
+        data: {
+            inputValue: '',
+            selectValue: -1,
+            radioValue: -1,
+            checkboxValues: []
+        },
+        methods: {
+            changeInputValue: function() {
+
+                this.inputValue = 'Changed value';
+
+            },
+            changeSelectValue: function() {
+
+                this.selectValue = 2;
+
+            },
+            changeRadioValue: function() {
+
+                this.radioValue = 1;
+
+            },
+            changeCheckboxValues: function() {
+
+                this.checkboxValues = ['2', '3', '4'];
+
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
