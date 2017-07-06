@@ -7,6 +7,7 @@ Custom Vue components with jQuery
 * bootstrap-label - [Demo](http://demo-laravel52.capilano-fw.com/VJ-Components/bootstrap-label/example.html)
 * bootstrap-spinner-button - [Demo](http://demo-laravel52.capilano-fw.com/VJ-Components/bootstrap-spinner-button/example.html)
 * select2 - [Demo](http://demo-laravel52.capilano-fw.com/VJ-Components/select2/example.html)
+* default-value - [Demo](http://demo-laravel52.capilano-fw.com/VJ-Components/default-value/example.html)
 
 # Installation
 

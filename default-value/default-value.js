@@ -16,7 +16,28 @@ Vue.directive('default-value', {
 
         }
 
-        Vue.set(vnode.context, model, binding.value);
+        if(model.indexOf('.') > -1) {
+
+            function stringToObj(path, value, obj) {
+                var parts = path.split('.'), part;
+                while (part = parts.shift()) {
+                    if (typeof obj[part] != 'object') {
+                        obj[part] = {};
+                    }
+                    if (parts.length === 0) {
+                        obj[part] = value;
+                    } else {
+                        obj = obj[part];
+                    }
+                }
+            }
+            stringToObj(model, binding.value, vnode.context._data);
+
+        } else {
+
+            Vue.set(vnode.context, model, binding.value);
+
+        }
 
     }
 });

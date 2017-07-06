@@ -59,6 +59,12 @@
         </label>
         <br>
         <button @click="changeCheckboxValues">Change Values</button>
+        <hr>
+        <p>Input Value: {{ inputValue }}</p>
+        <input id="nested_input" type="text" v-model="inputValues.first.one" v-default-value="'Default value2'">
+        <br>
+        <button @click="changeInputValue">Change Value</button>
+        <br>
     </div>
 </div>
 
@@ -74,7 +80,12 @@
             inputValue: '',
             selectValue: -1,
             radioValue: -1,
-            checkboxValues: []
+            checkboxValues: [],
+            inputValues: {
+                first: {
+                    one: 'first value'
+                }
+            }
         },
         methods: {
             changeInputValue: function() {
