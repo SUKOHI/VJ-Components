@@ -9,6 +9,7 @@ Vue.component('bootstrap-spinner-button', {
         loading: function(e) {
 
             $(e.target).button('loading');
+            this.$emit('spinner:click', true);
 
         }
     },

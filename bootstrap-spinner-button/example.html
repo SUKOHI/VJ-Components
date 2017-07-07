@@ -11,7 +11,7 @@
 <div id="el">
     <div class="row">
         <div class="col-sm-4">
-            <bootstrap-spinner-button id="button_1" class="btn btn-success"></bootstrap-spinner-button>
+            <bootstrap-spinner-button id="button_1" class="btn btn-success" @spinner:click="alert"></bootstrap-spinner-button>
             <bootstrap-spinner-button id="button_2" class="btn btn-success" data-loading-text="Loading now!">Send</bootstrap-spinner-button>
             <button @click="resetLoading" class="btn default btn-md">
                 Reset
@@ -37,6 +37,11 @@
 
                 // or
                 // $('button').button('reset');
+
+            },
+            alert: function() {
+
+                alert('Spinning!');
 
             }
         }
