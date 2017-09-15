@@ -66,6 +66,8 @@ Vue.component('bootstrap-buttons', {
     },
     mounted: function() {
 
+        var self = this;
+
         if(this.defaultValue != undefined) {
 
             this.selectedValue = this.defaultValue;
@@ -73,9 +75,12 @@ Vue.component('bootstrap-buttons', {
 
         }
 
-        this.active();
+        $(function(){
 
-        var self = this;
+            self.active();
+
+        });
+
         $(this.$el).find('input').on('change', function(e) {
 
             self.selectedValue = $(e.target).val();
