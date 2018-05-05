@@ -12,7 +12,7 @@ Vue.component('bootstrap-buttons', {
             selectedValue: this.value
         }
     },
-    template: '<div><div class="btn-group">' +
+    template: '<div><div :class="groupClass">' +
         '<button v-for="(optionText, optionKey) in options" type="button" :class="btnClass" :data-id="optionKey" @click="onclick(optionKey)">{{ optionText }}</button>' +
         '</div>' +
         '<input :name="this.name" type="hidden" :value="selectedValue"></div>',
@@ -61,6 +61,19 @@ Vue.component('bootstrap-buttons', {
             }
 
             return 'btn '+ type +' '+ size;
+
+        },
+        groupClass: function() {
+
+            var css = 'btn-group';
+
+            if(this.size == 'lg' || this.size == 'sm') {
+
+                css += ' btn-group-'+ this.size;
+
+            }
+console.log(css)
+            return css;
 
         }
     },
