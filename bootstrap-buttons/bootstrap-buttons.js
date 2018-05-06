@@ -72,7 +72,7 @@ Vue.component('bootstrap-buttons', {
                 css += ' btn-group-'+ this.size;
 
             }
-console.log(css)
+
             return css;
 
         }
