@@ -22,15 +22,19 @@ Vue.component('bootstrap-toggle-button', {
     methods: {
         active: function() {
 
+            var target = $(this.$el).find('button');
+
             if(this.checked) {
 
-                $(this.$el).find('button').addClass('active');
+                target.addClass('active');
 
             } else {
 
-                $(this.$el).find('button').removeClass('active');
+                target.removeClass('active');
 
             }
+
+            target.blur();
 
         },
         onclick: function() {

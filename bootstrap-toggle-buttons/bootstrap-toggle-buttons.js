@@ -23,7 +23,8 @@ Vue.component('bootstrap-toggle-buttons', {
         active: function() {
 
             var self = this;
-            $(this.$el).find('button').each(function(i, el){
+            var target = $(this.$el).find('button');
+            target.each(function(i, el){
 
                 var key = $(el).data('id');
                 $(el).removeClass('active');
@@ -34,7 +35,7 @@ Vue.component('bootstrap-toggle-buttons', {
 
                 }
 
-            });
+            }).blur();
 
         },
         getName: function(key) {

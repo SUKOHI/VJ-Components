@@ -20,7 +20,8 @@ Vue.component('bootstrap-buttons', {
         active: function() {
 
             var vm = this;
-            $(this.$el).find('button').each(function(i, el){
+            var target = $(this.$el).find('button');
+            target.each(function(i, el){
 
                 if(vm.selectedValue == $(el).data('id')) {
 
@@ -32,7 +33,7 @@ Vue.component('bootstrap-buttons', {
 
                 }
 
-            });
+            }).blur();
 
         },
         onclick: function(value) {
